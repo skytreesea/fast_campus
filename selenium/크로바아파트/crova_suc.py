@@ -3,7 +3,7 @@ import requests, re, time
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\패스트캠퍼스\자료\크롤링\selenium\chromedriver.exe')
+driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\chromedriver.exe')
 driver.get('https://land.naver.com/')
 apt ='크로바\n'
 #크로바 아파트로 들어가는 데까지는 성공

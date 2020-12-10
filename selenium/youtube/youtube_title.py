@@ -3,7 +3,7 @@ import requests, re, time
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-keyword='쯔양''
+keyword='쯔양'
 driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\chromedriver.exe')
 driver.get('https://www.youtube.com/results?search_query='+keyword)
 time.sleep(3)
