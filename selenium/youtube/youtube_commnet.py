@@ -3,7 +3,8 @@ import requests, re, time
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\chromedriver.exe')
+# 중요: 크롬드라이브를 다운받은 경로를 따와서 그대로 입력합니다.
+driver = webdriver.Chrome(r'경로')
 body = driver.find_element_by_tag_name('body')
 driver.get('https://www.youtube.com/watch?v=L_zjYgTbak8')
 # driver.get('https://www.youtube.com/results?search_query='+keyword)
