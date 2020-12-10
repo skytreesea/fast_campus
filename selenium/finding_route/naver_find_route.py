@@ -1,10 +1,11 @@
 # 네이버 지도 길 찾기 결과 검색하기 
+# 가장 먼저 할 일은 구글에서 크롬 드라이버를 다운받아 특정 폴더에 저장합니다. 
 import requests, re, time 
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-# 여기에 크롬 브라우저드라이버의 주소를 입력하세요. 
-driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\chromedriver.exe')
+# 여기에 다운 받아 크롬 브라우저드라이버 실행파일의 주소를 입력하세요. 
+driver = webdriver.Chrome(r' 경로를 입력하세요. ')
 driver.get('https://map.naver.com/v5/directions/-/-/-/transit?c=14139268.8290314,4507639.6434387,15,0,0,0,dh')
 # 시작하는 지점과 끝을 입력하세요. 
 start = '신대방'
