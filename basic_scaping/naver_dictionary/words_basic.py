@@ -1,10 +1,9 @@
 #네이버 사전 예문 크롤링 기본형
 import os , re, datetime, random, csv
-import numpy as np
 import requests
 from bs4 import BeautifulSoup as bs
 # words를 늘리면 단어 뜻과 예문 출력이 가능함
-words=['example','greatest','vindictive','patriotic','strategy','abundant','adjacent','recall']
+words=['example','greatest','vindictive','patriotic','strategy','abundant','adjacent']
 # 아래 주소에 단어만 더하면 단어 뜻과 예문이 든 페이지로 이동
 
 for word in words:

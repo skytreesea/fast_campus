@@ -12,6 +12,7 @@ title = driver.find_elements_by_class_name('title')
 address = driver.find_elements_by_class_name('address')
 #find_elements로 정보를 모아서 text로 출력하게 하는 것이 핵심
 info = driver.find_elements_by_class_name('info_area')
+time.sleep(5)
 crova_list=[]
 for i in range(len(title)):
     try:
