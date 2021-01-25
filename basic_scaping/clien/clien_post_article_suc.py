@@ -1,9 +1,9 @@
 # 클리앙 인기글 스크래핑 제목 성공
-import requests, re, time, csv
+import requests, re, time, csv, os
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
+os.chdir(r'C:\Users\ERC\Documents\GitHub\fast_campus\basic_scaping\clien')
 #한글로 저장 안되는 문제 해결해야 
 def writecsv(filename, the_list):
     #브라보 utf-8-sig: 대단한 발견
@@ -18,7 +18,7 @@ def opencsv(filename):
         output.append(i)
     return output
 
-total = opencsv('clien_py_suc.csv')
+total = opencsv('clien_py_suc_ver2.0.csv')
 total_new=[]
 for url in total:
     posting = ''
