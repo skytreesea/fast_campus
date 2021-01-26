@@ -14,10 +14,6 @@ saramin = []
 for num in range(len(company_name)):
     saramin.append([company_name[num].text, detail[num].text, 'http://www.saramin.co.kr'+detail[num].get('href')])
 
-def writecsv(filename, the_list):
-    #브라보 utf-8-sig: 대단한 발견
-    with open(filename,'w', newline='', encoding='utf-8-sig') as f:
-        a=csv.writer(f, delimiter=',')
-        a.writerows(the_list)
-
-writecsv('saramin.csv', saramin)
+import pandas as pd 
+df = pd.DataFrame(saramin)
+df.to_clipboard()
