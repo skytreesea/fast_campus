@@ -10,7 +10,7 @@ os.chdir(r'C:\Users\ERC\Pictures\Saved Pictures')
 for url in urls:
     headers = {"User-Agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36'}
     soup = BeautifulSoup(requests.get(url, headers = headers).text, 'lxml')
-    
     for i in soup.find_all('div', {'class':'chart'}):
-        with open(url[-5:]+'chart.jpg', 'wb') as handler:
+        # 주식종목만 입력하면 차트 자동 다운로드
+        with open(url[-6:]+'chart.jpg', 'wb') as handler:
             handler.write(requests.get(i.find('img').get('src')).content)
