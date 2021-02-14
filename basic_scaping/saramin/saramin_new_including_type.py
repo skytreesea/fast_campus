@@ -5,23 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 # 신규 크롤링
 url = 'http://www.saramin.co.kr/zf_user/jobs/public/list'
-soup = bs(requests.get(url).text, 'html.parser')
-company_name = soup.find_all('td', {'class':'company_nm'})
-detail = soup.find_all('a', {'class':'str_tit'})
-employment_type = soup.find_all('p', {'class':'employment_type'})
-
-saramin = []
-for num in range(len(company_name)):
-    try:
-        saramin.append([company_name[num].text, detail[num].text, employment_type[num].text,'http://www.saramin.co.kr'+detail[num].get('href')])
-    except:
-        pass
-    #'http://www.saramin.co.kr'+detail[num].get('href')])
-
-def writecsv(filename, the_list):
-    #브라보 utf-8-sig: 대단한 발견
-    with open(filename,'w', newline='', encoding='utf-8-sig') as f:
-        a=csv.writer(f, delimiter=',')
-        a.writerows(the_list)
-
-writecsv('saramin_new_including_type.csv', saramin)
+a_sample='https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=39455251&recommend_ids=eJxdj8kRA0EIA6Pxn0MgeDuQzT8LX7PDlJ9NU0J4R0t7XtHx4NMPvPAbuJXhInKhAh%2F%2Fj%2Fd6iga2h6QEZ500%2BIQFsg%2B7cYcp1MZvXP6dX17jW0zkfGXhWkeFh0w3MDiveLeB0w1E1SAtXQ9ban1jsTJ0Jxffp6hHL03W7gUz1PfuCydNVFY%3D&view_type=list&gz=1&t_ref_content=education&t_ref=hot100#seq=0'
+soup = bs(requests.get(a_sample).text, 'html.parser') 
+time.sleep(5)
+print(soup.find('div',{'class':'status'}))
