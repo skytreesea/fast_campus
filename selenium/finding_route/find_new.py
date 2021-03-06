@@ -31,10 +31,10 @@ def route(start, finish):
     time.sleep(3)
     print(driver.find_element_by_class_name('summary_box').text)
     time.sleep(2)
-    driver.save_screenshot(r'C:\Users\ERC\Pictures\Saved Pictures\스크린샷\\'+ start+' 도착: ' + finish+ '.png')
+    driver.save_screenshot(r'C:\Users\ERC\Pictures\Saved Pictures\스크린샷\\'+ start + finish+ '.png')
 
 
 # route('경복궁', '신사역')
-route('강남역','신사역')
+# route('강남역','신사역')
 route('서울시청','광주시청')
 route('동대구역','파동 동사무소')
