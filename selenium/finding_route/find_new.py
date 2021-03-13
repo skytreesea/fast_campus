@@ -4,12 +4,9 @@ import requests, re, time
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-# 시작하는 지점과 끝을 입력하세요. 
-start = '경복궁'
-finish = '남산타워'
+
 # 여기에 다운 받아 크롬 브라우저드라이버 실행파일의 주소를 입력하세요. 
 driver = webdriver.Chrome(r'C:\Users\ERC\Documents\파이썬\chromedriver.exe')
-
 
 def route(start, finish):
     driver.get('https://map.naver.com/v5/directions/-/-/-/transit?c=14139268.8290314,4507639.6434387,15,0,0,0,dh')
@@ -29,12 +26,8 @@ def route(start, finish):
     time.sleep(3)
     driver.find_element_by_xpath('//*[@id="container"]/shrinkable-layout/div/directions-layout/directions-result/div[1]/div/directions-search/div[2]/button[3]').click()
     time.sleep(3)
-    print(driver.find_element_by_class_name('summary_box').text)
+    print('{}에서 {}까지 걸리는 시간과 거리: {}\n'.format(start, finish, driver.find_element_by_class_name('summary_box').text))
     time.sleep(2)
     driver.save_screenshot(r'C:\Users\ERC\Pictures\Saved Pictures\스크린샷\\'+ start + finish+ '.png')
 
-
-# route('경복궁', '신사역')
-# route('강남역','신사역')
-route('서울시청','광주시청')
-route('동대구역','파동 동사무소')
+route('서울시청','경복궁')
