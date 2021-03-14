@@ -13,7 +13,7 @@ xpath3 = '//input[@id="pw"]'
 xpath4 = '//input[@id="log.login"]'
 
 my_id = 'fast_stranger'
-my_pw = 'abstract1234!!'
+my_pw = 'muscle1234$$' 
 
 # 크롬창 켜기
 pyperclip.copy(my_id) # id 복사
