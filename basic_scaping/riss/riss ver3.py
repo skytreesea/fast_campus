@@ -20,7 +20,7 @@ def make_total(query):
             [i.text for i in item.find('p',{'class':'etc'}).find_all('a')])
     return total
 
-final = make_total('지방공기업')
+final = make_total('')
 for i in final:
     driver.get(i[1])
     driver.find_elements_by_class_name('btnKakaoi')[0].click()

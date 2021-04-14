@@ -1,11 +1,10 @@
 # 인기글 스크래핑 제목 성공
-import requests, re, time, csv
-from bs4 import BeautifulSoup as bs
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+import requests 
+from bs4 import BeautifulSoup 
+
 # 신규 크롤링
 url = 'http://www.saramin.co.kr/zf_user/jobs/hot100'
-soup = bs(requests.get(url).text, 'html.parser')
+soup = BeautifulSoup(requests.get(url).text, 'html.parser')
 company_name = soup.find_all('a', {'class':'company_name'})
 detail = soup.find_all('a', {'class':'tit'})
 
