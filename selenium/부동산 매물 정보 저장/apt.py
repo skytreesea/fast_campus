@@ -1,20 +1,14 @@
-import time 
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-basic = 'https://land.naver.com/'
-driver = webdriver.Chrome(r'C:\Users\ERC\Documents\chromedriver.exe')
-driver.get(basic)
-box = driver.find_element_by_xpath('//*[@id="queryInputHeader"]')
-box.send_keys('은마\n')
-time.sleep(3)
-driver.find_element_by_xpath('//*[@id="ct"]/div[2]/div[1]/div[2]/div/div/div[1]/div/a/div[1]').click()
-time.sleep(3)
+import requests,re
+from bs4 import BeautifulSoup
+f = open(r'C:\Users\ERC\Documents\GitHub\fast_campus\api\apt_test.xml','r',encoding='utf8')
+data = f.read()
+f.close()
+soup = BeautifulSoup(data,'lxml') 
+print([re.sub('\\n','',i) for i in re.split('[가-힣].+?\>', soup.item.text)])
+# total = []
+# total.append([i.text for i in soup.find_all('일')])
 
-title = [i.text for i in driver.find_elements_by_class_name('item_title')]
-price = [i.text for i in driver.find_elements_by_class_name('price_line')]
-total = [title, price]
-
-driver.save_screenshot(r'C:\Users\ERC\Pictures\Saved Pictures\스크린샷\은마.png')
-import pandas as pd
-df= pd.DataFrame(total).transpose()
-df.to_clipboard()
+# import pandas as pd 
+# df = pd.DataFrame(total).transpose()
+# df.to_clipboard()
+# print(df)
